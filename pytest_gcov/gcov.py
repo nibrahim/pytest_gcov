@@ -1,4 +1,3 @@
-import glob
 import os
 import subprocess
 
@@ -35,7 +34,7 @@ class GCOVPlugin(object):
     def parse_gcov_data(self, coverage_file):
         total = covered = uncovered = 0
         for line in coverage_file:
-            stat, lineno, src_line = [x.strip() for x in line.split(":", 2)]
+            stat, lineno, _ = [x.strip() for x in line.split(":", 2)]
             if lineno == "0":
                 continue
             total += 1
@@ -80,9 +79,6 @@ class GCOVPlugin(object):
                 terminalreporter.write_line("\n*************************\nError while processing coverage data for {}\nActual error follows:\n".format(i))
                 terminalreporter.write_line(str(g))
 
-            
-            
-        
 
 def pytest_configure(config):
     """Activate coverage plugin if appropriate."""
