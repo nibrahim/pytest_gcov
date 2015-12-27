@@ -13,11 +13,12 @@ setup(
     install_requires = ['pytest'],
     packages = ['pytest_gcov'],
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 3 - Alpha',
+        'Environment :: Plugins',
         'Intended Audience :: Developers',
+        'Operating System :: POSIX :: Linux',
         'License :: OSI Approved :: BSD License',
-        'Operating System :: Linux',
-        'Topic :: Development tools',
+        'Topic :: Utilities',
         'Programming Language :: Python',
     ],
     # the following makes a plugin available to pytest
