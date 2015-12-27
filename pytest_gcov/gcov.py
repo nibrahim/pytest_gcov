@@ -23,16 +23,13 @@ class GCOVPlugin(object):
             gen_files = ["{}.{}".format(base, x) for x in ["gcda"]]
             for j in gen_files:
                 try:
-                    print "Trying to remove {}".format(j)
                     os.unlink(j)
                 except:
-                    print "Nope"
+                    pass
             try:
-                print "Trying to remove {}".format("{}.gcov".format(i))
                 os.unlink("{}.gcov".format(i))
             except:
-                print "Nope"
-        # print os.system("ls")
+                pass
 
         
     def parse_gcov_data(self, coverage_file):
